@@ -30,5 +30,15 @@ public class AgendaMigrations {
             database.execSQL("ALTER TABLE Aluno_Temp RENAME TO Aluno");
         }
     };
-    public static final Migration[] MIGRATION = {MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4};
+
+    private static final Migration MIGRATION_4_5 = new Migration(4, 5) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+            database.execSQL("CREATE TABLE IF NOT EXISTS `Aluno_Temp` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nome` TEXT, `telefoneFixo` TEXT,`telefoneCelular` TEXT,`email` TEXT, `data` INTEGER)");
+            database.execSQL("INSERT INTO Aluno_Temp (id, nome, telefoneFixo, email) SELECT id, nome, telefone astelefoneFixo, email FROM Aluno");
+            database.execSQL("DROP TABLE Aluno");
+            database.execSQL("ALTER TABLE Aluno_Temp RENAME TO Aluno");
+        }
+    };
+    public static final Migration[] MIGRATION = {MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4,MIGRATION_4_5};
 }

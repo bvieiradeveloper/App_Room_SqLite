@@ -15,7 +15,7 @@ import br.com.alura.agenda.database.conversor.ConversorCalendar;
 import br.com.alura.agenda.database.migrations.AgendaMigrations;
 import br.com.alura.agenda.model.Aluno;
 
-@Database(entities = {Aluno.class},version = 4,exportSchema = false)
+@Database(entities = {Aluno.class},version = 5,exportSchema = false)
 @TypeConverters(ConversorCalendar.class)
 public abstract class AgendaDataBase extends RoomDatabase {
     public abstract RoomAlunoDAO getRoomAlunoDAO();
