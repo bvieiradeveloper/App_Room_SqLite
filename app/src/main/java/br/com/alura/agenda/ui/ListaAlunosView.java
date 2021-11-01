@@ -6,9 +6,6 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import androidx.room.Room;
-
-import br.com.alura.agenda.dao.AlunoDAO;
 import br.com.alura.agenda.dao.RoomAlunoDAO;
 import br.com.alura.agenda.database.AgendaDataBase;
 import br.com.alura.agenda.model.Aluno;

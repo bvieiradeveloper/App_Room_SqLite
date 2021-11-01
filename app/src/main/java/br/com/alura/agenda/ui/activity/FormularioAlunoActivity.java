@@ -5,11 +5,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 
 import br.com.alura.agenda.R;
-import br.com.alura.agenda.dao.AlunoDAO;
 import br.com.alura.agenda.dao.RoomAlunoDAO;
 import br.com.alura.agenda.database.AgendaDataBase;
 import br.com.alura.agenda.model.Aluno;
